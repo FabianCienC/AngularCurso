@@ -1,0 +1,36 @@
+@use "../../../styles/variables";
+
+header {
+    height: 80px;
+    padding: 0 20px;
+    background-color: variables.$color-primario;
+    color: white;
+    display: flex;
+    
+    span {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 80px;
+    }
+
+    a {
+        color: white;
+        margin: 0 10px 0 10px;
+        line-height: 80px;
+        text-decoration: none;
+        
+        &:hover {
+            font-size: larger;
+            text-decoration: underline;
+        }
+        &.active {
+          font-size: x-large;
+          font-weight: bold;
+          border-bottom: 2px solid white;
+          margin: 0 20px 0 20px;
+        }
+    }
+    .spacer {
+        flex: 1 1 auto;
+    }
+}

@@ -1,0 +1,15 @@
+@use "../styles/variables";
+
+button {
+    background-color: variables.$color-primario;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: white;
+
+
+
+    &:hover {
+        background-color: adjust-color(variables.$color-primario, $lightness: 10%);
+    }
+}

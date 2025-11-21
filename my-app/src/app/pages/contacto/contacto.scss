@@ -1,0 +1,32 @@
+form {
+    margin: auto;
+    max-width: 800px;
+
+    div {
+        margin-bottom: 10px;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+    input {
+        height: 40px;
+    }
+    textarea {
+        height: 120px;
+    }
+    .error{
+        background-color: rgb(255, 0, 0, 0.3);
+        color: darkred;
+        padding: 12px 10px;
+        border-color: darkred;
+        border-radius: 5px;
+    }
+    .success{
+        background-color: rgb(0, 255, 0, 0.3);
+        color: darkgreen;
+        padding: 12px 10px;
+        border-color: darkgreen;
+        border-radius: 5px;
+    }
+}
