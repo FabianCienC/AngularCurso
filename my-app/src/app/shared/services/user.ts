@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User as IUser } from '../data-types/user';
+import { environment } from '../../../environments/environment';
 
 
 @Injectable({
@@ -11,12 +12,24 @@ import { User as IUser } from '../data-types/user';
 export class User {
   constructor(private httpClient: HttpClient){}
   
-  getCleanUser() {
-    
+  getCleanUser(): IUser {
+    return {
+      name: '',
+      email: '',
+      username: '',
+      address: {
+        calle: '',
+        zipcode: ''
+      }
+    }
   }
 
   getUser(): Observable<IUser[]> {
-    return this.httpClient.get<IUser[]>("https://jsonplaceholder.typicode.com/users")
+    return this.httpClient.get<IUser[]>(environment.apiUrl + "/users")
+  }
+
+  getUserById(id: string): Observable<IUser> {
+    return this.httpClient.get<IUser>(environment.apiUrl + "/users/" + id)
   }
 
   createUser(){

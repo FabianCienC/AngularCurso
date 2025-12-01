@@ -1,0 +1,14 @@
+@if (user) {    
+    <div>
+        <strong>Nombre: </strong>
+        <span>{{user.name}}</span>
+    </div>
+    <div>    
+        <strong>Email: </strong>
+        <span>{{user.email}}</span>
+    </div>
+
+    <button (click)="clearSelection()">Clear</button>
+} @else {
+    <p>No has seleccionado ningun usuario</p>
+}

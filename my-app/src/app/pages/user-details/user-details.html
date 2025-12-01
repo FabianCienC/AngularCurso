@@ -1,0 +1,19 @@
+@if (isError) {
+    <h1>User Not Found 404</h1>
+} @else {
+    <div class="container">
+        <a routerLink="../">&lt; Regresar</a>
+        @if (user) {
+            <div>
+                <strong>Nombre: </strong>
+                <span>{{user.name}}</span>
+            </div>
+            <div>
+                <strong>Correo: </strong>
+                <span>{{user.email}}</span>
+            </div>
+        } @else {
+            <p>No hay usuario</p>
+        }
+    </div>
+}

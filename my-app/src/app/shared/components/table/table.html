@@ -1,12 +1,20 @@
+<h2>{{titulo}}</h2>
+<input 
+    type="text" 
+    (keyup)="filterData()" 
+    [(ngModel)]="buscar" 
+    placeholder="Buscar..."
+>
+
 <table>
-    <thead>
-        <tr>
-            <th>{{titulo}}</th>
-        </tr>
-    </thead>
     <tbody>
-    @for (item of items; track $index) {
-        <tr (click)="clickHandler(item)">
+    @for (item of displayData; track $index) {
+        <tr 
+            (click)="clickHandler(item)" 
+            [ngStyle]="{
+                'color': item === selectedItem ? 'blue' : 'black'
+            }"
+        >
             <td>{{item}}</td>
         </tr>
     }

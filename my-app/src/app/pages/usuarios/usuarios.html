@@ -1,1 +1,16 @@
-<app-table [datos]="userNames" titulo="Lista de Usuarios" (onItemSelected)="userSelectedHandler($event)" ></app-table>
+<div class="panels">
+    <div>
+        <app-table 
+        [datos]="userNames" 
+        titulo="Lista de Usuarios" 
+        (onItemSelected)="userSelectedHandler($event)"
+        [selectedItem]="selectedUser ? selectedUser.name : ''"
+        ></app-table>
+    </div>
+    <div>
+        <app-data-user 
+        [user]="selectedUser"
+        (onItemClear)="cleanUserHandler()"
+        ></app-data-user>
+    </div>
+</div>
